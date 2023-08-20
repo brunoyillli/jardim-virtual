@@ -1,0 +1,31 @@
+<h2>Adicione uma nova planta</h2>
+<form [formGroup]="plantaForm" (ngSubmit)="onSubmit()">
+
+  <div class="form-field-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="nome">
+    </mat-form-field>
+  </div>
+
+  <div class="form-field-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Espécie</mat-label>
+      <input matInput formControlName="especie">
+    </mat-form-field>
+  </div>
+
+  <div class="form-field-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Data da próxima rega</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="dataRega">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+
+  <div class="form-field-container">
+    <button mat-raised-button color="primary" type="submit">Adicionar Planta</button>
+  </div>
+
+</form>
