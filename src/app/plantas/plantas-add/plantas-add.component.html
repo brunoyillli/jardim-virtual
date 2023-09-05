@@ -5,6 +5,9 @@
     <mat-form-field appearance="fill">
       <mat-label>Nome</mat-label>
       <input matInput formControlName="nome">
+      <mat-error *ngIf="plantaForm.controls['nome'].hasError('pattern')">
+        O nome deve conter apenas letras e espaços.
+      </mat-error>
     </mat-form-field>
   </div>
 
@@ -12,6 +15,9 @@
     <mat-form-field appearance="fill">
       <mat-label>Espécie</mat-label>
       <input matInput formControlName="especie">
+      <mat-error *ngIf="plantaForm.controls['especie'].hasError('pattern')">
+        A espécie deve conter apenas letras e espaços.
+      </mat-error>
     </mat-form-field>
   </div>
 
@@ -25,7 +31,8 @@
   </div>
 
   <div class="form-field-container">
-    <button mat-raised-button color="primary" type="submit">Adicionar Planta</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!plantaForm.valid">
+      Adicionar Planta
+    </button>
   </div>
-
 </form>

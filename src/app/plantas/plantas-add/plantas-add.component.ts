@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators  } from '@angular/forms';
 
 @Component({
   selector: 'app-plantas-add',
@@ -11,15 +11,27 @@ export class PlantasAddComponent {
   @Output() plantaAdicionada = new EventEmitter<any>();
 
   plantaForm = new FormGroup({
-    nome: new FormControl(''),
-    especie: new FormControl(''),
-    dataRega: new FormControl('')
+    nome: new FormControl('', [
+      Validators.required,
+      Validators.pattern('[a-zA-Z ]*') 
+    ]),
+    especie: new FormControl('', [
+      Validators.required,
+      Validators.pattern('[a-zA-Z ]*') 
+    ]),
+    dataRega: new FormControl('', [
+      Validators.required
+    ])
   });
 
 
   onSubmit() {
-    console.log('Planta adicionada:', this.plantaForm.value);
-    this.plantaAdicionada.emit(this.plantaForm.value);
-    this.plantaForm.reset();
+    if (this.plantaForm.valid) {
+      let plantas = JSON.parse(localStorage.getItem('plantas') || '[]');
+      plantas.push(this.plantaForm.value);
+      localStorage.setItem('plantas', JSON.stringify(plantas));
+      this.plantaAdicionada.emit(this.plantaForm.value);
+      this.plantaForm.reset();
+    }
   }
 }

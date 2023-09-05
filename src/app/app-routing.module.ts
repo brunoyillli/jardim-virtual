@@ -8,8 +8,7 @@ const routes: Routes = [
   {
     path: '', component: PlantasPageComponent, children: [
       { path: 'add', component: PlantasAddComponent },
-      { path: 'list', component: PlantasListComponent },
-      { path: '', redirectTo: 'list', pathMatch: 'full' }
+      { path: 'list', component: PlantasListComponent }
     ]
   }
 ];

@@ -7,4 +7,16 @@ import { Component, Input } from '@angular/core';
 })
 export class PlantasListComponent {
   @Input() plantas: any[] = [];
+
+  ngOnInit() {
+    this.loadPlantasFromLocalStorage();
+  }
+
+  loadPlantasFromLocalStorage() {
+    const storedPlantas = JSON.parse(localStorage.getItem('plantas') || '[]');
+
+    if (storedPlantas.length !== this.plantas.length) {
+      this.plantas = storedPlantas;
+    }
+  }
 }

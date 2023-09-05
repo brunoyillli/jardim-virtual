@@ -1,21 +1,16 @@
-<!-- plantas-list.component.html -->
 <h2>Lista de Plantas</h2>
 
-<!-- Tabela de listagem de plantas -->
 <mat-table [dataSource]="plantas" *ngIf="plantas.length > 0; else noData">
-  <!-- Nome Column -->
   <ng-container matColumnDef="nome">
     <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
     <mat-cell *matCellDef="let planta"> {{planta.nome}} </mat-cell>
   </ng-container>
 
-  <!-- Espécie Column -->
   <ng-container matColumnDef="especie">
     <mat-header-cell *matHeaderCellDef> Espécie </mat-header-cell>
     <mat-cell *matCellDef="let planta"> {{planta.especie}} </mat-cell>
   </ng-container>
 
-  <!-- Data da Próxima Rega Column -->
   <ng-container matColumnDef="dataRega">
     <mat-header-cell *matHeaderCellDef> Data da Próxima Rega </mat-header-cell>
     <mat-cell *matCellDef="let planta"> {{planta.dataRega | date:'short'}} </mat-cell>
@@ -25,7 +20,6 @@
   <mat-row *matRowDef="let row; columns: ['nome', 'especie', 'dataRega'];"></mat-row>
 </mat-table>
 
-<!-- Mensagem quando não há dados -->
 <ng-template #noData>
   <p>Nenhuma planta foi adicionada ainda.</p>
 </ng-template>
