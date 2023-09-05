@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -7,6 +7,8 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./plantas-add.component.css']
 })
 export class PlantasAddComponent {
+
+  @Output() plantaAdicionada = new EventEmitter<any>();
 
   plantaForm = new FormGroup({
     nome: new FormControl(''),
@@ -17,6 +19,7 @@ export class PlantasAddComponent {
 
   onSubmit() {
     console.log('Planta adicionada:', this.plantaForm.value);
+    this.plantaAdicionada.emit(this.plantaForm.value);
     this.plantaForm.reset();
   }
 }

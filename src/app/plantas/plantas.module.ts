@@ -7,11 +7,17 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { PlantasListComponent } from './plantas-list/plantas-list.component';
+import { MatTableModule } from '@angular/material/table';
+import { PlantasPageComponent } from './plantas-page/plantas-page.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [
-    PlantasAddComponent
+    PlantasAddComponent,
+    PlantasListComponent,
+    PlantasPageComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +27,9 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatButtonModule,
     MatFormFieldModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTableModule,
+    RouterModule
   ],
   exports: [PlantasAddComponent]
 })
