@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { FormControl, FormGroup, Validators  } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-plantas-add',
@@ -24,14 +24,28 @@ export class PlantasAddComponent {
     ])
   });
 
-
-  onSubmit() {
+  async onSubmit() {
     if (this.plantaForm.valid) {
-      let plantas = JSON.parse(localStorage.getItem('plantas') || '[]');
-      plantas.push(this.plantaForm.value);
-      localStorage.setItem('plantas', JSON.stringify(plantas));
-      this.plantaAdicionada.emit(this.plantaForm.value);
-      this.plantaForm.reset();
+      const novaPlanta = this.plantaForm.value;
+      const response = await fetch('http://localhost:3000/plantas', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(novaPlanta)
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        let plantas = JSON.parse(localStorage.getItem('plantas') || '[]');
+        plantas.push(data);
+        localStorage.setItem('plantas', JSON.stringify(plantas));
+        this.plantaAdicionada.emit(data);
+        this.plantaForm.reset();
+      } else {
+        console.error('Erro ao adicionar planta:', data.message);
+      }
     }
   }
 }
