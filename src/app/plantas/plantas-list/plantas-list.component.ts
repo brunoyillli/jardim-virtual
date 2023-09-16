@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { PlantasService } from '../plantas.service';
+
 
 @Component({
   selector: 'app-plantas-list',
@@ -8,8 +10,19 @@ import { Component, Input } from '@angular/core';
 export class PlantasListComponent {
   @Input() plantas: any[] = [];
 
+  isLoading = true;
+
+  constructor(private plantasService: PlantasService) { }
+
+
   ngOnInit() {
-    this.loadPlantasFromLocalStorage();
+    this.getPlantas();
+  }
+  getPlantas() {
+    this.plantasService.getPlantas().subscribe(data => {
+      this.plantas = data;
+      this.isLoading = false;
+    });
   }
 
   loadPlantasFromLocalStorage() {

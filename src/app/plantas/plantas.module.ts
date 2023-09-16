@@ -11,6 +11,7 @@ import { PlantasListComponent } from './plantas-list/plantas-list.component';
 import { MatTableModule } from '@angular/material/table';
 import { PlantasPageComponent } from './plantas-page/plantas-page.component';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { RouterModule } from '@angular/router';
     MatFormFieldModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    HttpClientModule,
     MatTableModule,
     RouterModule
   ],

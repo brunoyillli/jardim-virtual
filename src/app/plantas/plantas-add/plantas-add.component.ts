@@ -38,9 +38,6 @@ export class PlantasAddComponent {
       const data = await response.json();
 
       if (response.ok) {
-        let plantas = JSON.parse(localStorage.getItem('plantas') || '[]');
-        plantas.push(data);
-        localStorage.setItem('plantas', JSON.stringify(plantas));
         this.plantaAdicionada.emit(data);
         this.plantaForm.reset();
       } else {
