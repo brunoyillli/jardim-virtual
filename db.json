@@ -1,22 +1,52 @@
 {
   "plantas": [
     {
-      "nome": "dsada",
-      "especie": "dsadas",
-      "dataRega": "2023-09-28T03:00:00.000Z",
-      "id": 1
+      "id": 1,
+      "nome": "Lírio da Paz",
+      "especie": "Spathiphyllum wallisii",
+      "dataRega": "2023-09-18"
     },
     {
-      "nome": "arvore",
-      "especie": "verde",
-      "dataRega": "2023-09-12T03:00:00.000Z",
-      "id": 2
+      "id": 2,
+      "nome": "Samambaia",
+      "especie": "Nephrolepis exaltata",
+      "dataRega": "2023-09-20"
     },
     {
-      "nome": "asd",
-      "especie": "dasd",
-      "dataRega": "2023-09-28T03:00:00.000Z",
-      "id": 3
+      "id": 3,
+      "nome": "Zamioculca",
+      "especie": "Zamioculcas zamiifolia",
+      "dataRega": "2023-09-22"
+    },
+    {
+      "id": 4,
+      "nome": "Suculenta",
+      "especie": "Echeveria elegans",
+      "dataRega": "2023-09-30"
+    },
+    {
+      "id": 5,
+      "nome": "Jiboia",
+      "especie": "Epipremnum aureum",
+      "dataRega": "2023-09-19"
+    },
+    {
+      "id": 6,
+      "nome": "Costela-de-Adão",
+      "especie": "Monstera deliciosa",
+      "dataRega": "2023-09-25"
+    },
+    {
+      "id": 7,
+      "nome": "Cacto",
+      "especie": "Ferocactus glaucescens",
+      "dataRega": "2023-10-05"
+    },
+    {
+      "id": 8,
+      "nome": "Bambu da Sorte",
+      "especie": "Dracaena sanderiana",
+      "dataRega": "2023-09-21"
     }
   ]
 }

@@ -8,6 +8,9 @@
       <mat-error *ngIf="plantaForm.controls['nome'].hasError('pattern')">
         O nome deve conter apenas letras e espaços.
       </mat-error>
+      <mat-error *ngIf="plantaForm.controls['nome'].hasError('onlySpaces')">
+        O nome não pode ser apenas espaços.
+      </mat-error>
     </mat-form-field>
   </div>
 
@@ -17,6 +20,9 @@
       <input matInput formControlName="especie">
       <mat-error *ngIf="plantaForm.controls['especie'].hasError('pattern')">
         A espécie deve conter apenas letras e espaços.
+      </mat-error>
+      <mat-error *ngIf="plantaForm.controls['especie'].hasError('onlySpaces')">
+        A espécie não pode ser apenas espaços.
       </mat-error>
     </mat-form-field>
   </div>
