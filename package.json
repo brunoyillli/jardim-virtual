@@ -7,7 +7,8 @@
     "build": "ng build --base-href=/jardim-virtual/",
     "ghpages": "angular-cli-ghpages --dir=dist/jardim-virtual",
     "watch": "ng build & npm run ghpages",
-    "test": "ng test"
+    "test": "ng test",
+    "json:server": "json-server --watch db.json"
   },
   "private": true,
   "dependencies": {
