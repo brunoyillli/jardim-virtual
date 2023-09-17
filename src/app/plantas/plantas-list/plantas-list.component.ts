@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { PlantasService } from '../plantas.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class PlantasListComponent {
 
   isLoading = true;
 
-  constructor(private plantasService: PlantasService) { }
+  constructor(private plantasService: PlantasService,private router: Router) { }
 
 
   ngOnInit() {
@@ -31,5 +32,9 @@ export class PlantasListComponent {
     if (storedPlantas.length !== this.plantas.length) {
       this.plantas = storedPlantas;
     }
+  }
+
+  viewDetails(id: number) {
+    this.router.navigate(['/plantas/detalhes', id]);
   }
 }

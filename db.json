@@ -47,6 +47,12 @@
       "nome": "Bambu da Sorte",
       "especie": "Dracaena sanderiana",
       "dataRega": "2023-09-21"
+    },
+    {
+      "nome": "Orquidea",
+      "especie": "Phalaenopsis ",
+      "dataRega": "2023-09-28T03:00:00.000Z",
+      "id": 9
     }
   ]
 }

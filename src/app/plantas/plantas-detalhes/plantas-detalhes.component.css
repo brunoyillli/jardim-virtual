@@ -1,0 +1,9 @@
+.planta-card {
+    max-width: 400px;
+    margin: 20px auto;
+  }
+  
+  mat-card-actions {
+    justify-content: flex-end;
+  }
+  

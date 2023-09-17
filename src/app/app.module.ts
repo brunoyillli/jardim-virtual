@@ -8,7 +8,7 @@ import { PlantasModule } from './plantas/plantas.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatTableModule} from '@angular/material/table'
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [

@@ -16,8 +16,15 @@
     <mat-cell *matCellDef="let planta"> {{planta.dataRega | date:'short'}} </mat-cell>
   </ng-container>
 
-  <mat-header-row *matHeaderRowDef="['nome', 'especie', 'dataRega']"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: ['nome', 'especie', 'dataRega'];"></mat-row>
+  <ng-container matColumnDef="detalhes">
+    <mat-header-cell *matHeaderCellDef> Detalhes </mat-header-cell>
+    <mat-cell *matCellDef="let planta"> 
+      <button mat-button (click)="viewDetails(planta.id)">Ver Detalhes</button> 
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="['nome', 'especie', 'dataRega', 'detalhes']"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: ['nome', 'especie', 'dataRega', 'detalhes'];"></mat-row>
 </mat-table>
 
 <ng-template #noData>

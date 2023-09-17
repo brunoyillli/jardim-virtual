@@ -14,4 +14,8 @@ export class PlantasService {
   getPlantas(): Observable<any> {
     return this.http.get<any>(this.apiUrl);
   }
+
+  getPlantaById(id: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
+  }
 }

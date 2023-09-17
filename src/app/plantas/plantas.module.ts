@@ -12,13 +12,15 @@ import { MatTableModule } from '@angular/material/table';
 import { PlantasPageComponent } from './plantas-page/plantas-page.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-
+import { PlantasDetalhesComponent } from './plantas-detalhes/plantas-detalhes.component';
+import { MatCardModule } from '@angular/material/card'
 
 @NgModule({
   declarations: [
     PlantasAddComponent,
     PlantasListComponent,
-    PlantasPageComponent
+    PlantasPageComponent,
+    PlantasDetalhesComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatNativeDateModule,
     HttpClientModule,
     MatTableModule,
-    RouterModule
+    RouterModule,
+    MatCardModule
   ],
   exports: [PlantasAddComponent]
 })
