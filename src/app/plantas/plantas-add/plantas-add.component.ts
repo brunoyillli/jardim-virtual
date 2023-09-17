@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-plantas-add',
@@ -13,11 +13,11 @@ export class PlantasAddComponent {
   plantaForm = new FormGroup({
     nome: new FormControl('', [
       Validators.required,
-      Validators.pattern('[a-zA-Z ]*') 
+      Validators.pattern('[a-zA-Z ]*'), noOnlySpacesValidator
     ]),
     especie: new FormControl('', [
       Validators.required,
-      Validators.pattern('[a-zA-Z ]*') 
+      Validators.pattern('[a-zA-Z ]*') , noOnlySpacesValidator
     ]),
     dataRega: new FormControl('', [
       Validators.required
@@ -45,4 +45,10 @@ export class PlantasAddComponent {
       }
     }
   }
+  
 }
+  function noOnlySpacesValidator(control: AbstractControl): { [key: string]: any } | null {
+    const value = control.value || '';
+    const isValid = value.trim().length > 0;
+    return isValid ? null : { 'onlySpaces': true };
+  }
