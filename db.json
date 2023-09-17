@@ -1,0 +1,22 @@
+{
+  "plantas": [
+    {
+      "nome": "dsada",
+      "especie": "dsadas",
+      "dataRega": "2023-09-28T03:00:00.000Z",
+      "id": 1
+    },
+    {
+      "nome": "arvore",
+      "especie": "verde",
+      "dataRega": "2023-09-12T03:00:00.000Z",
+      "id": 2
+    },
+    {
+      "nome": "asd",
+      "especie": "dasd",
+      "dataRega": "2023-09-28T03:00:00.000Z",
+      "id": 3
+    }
+  ]
+}

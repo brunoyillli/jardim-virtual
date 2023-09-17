@@ -1,0 +1,26 @@
+<h2>Lista de Plantas</h2>
+
+<mat-table [dataSource]="plantas" *ngIf="plantas.length > 0; else noData">
+  <ng-container matColumnDef="nome">
+    <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+    <mat-cell *matCellDef="let planta"> {{planta.nome}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="especie">
+    <mat-header-cell *matHeaderCellDef> Espécie </mat-header-cell>
+    <mat-cell *matCellDef="let planta"> {{planta.especie}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="dataRega">
+    <mat-header-cell *matHeaderCellDef> Data da Próxima Rega </mat-header-cell>
+    <mat-cell *matCellDef="let planta"> {{planta.dataRega | date:'short'}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="['nome', 'especie', 'dataRega']"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: ['nome', 'especie', 'dataRega'];"></mat-row>
+</mat-table>
+
+<ng-template #noData>
+  <p>Nenhuma planta foi adicionada ainda.</p>
+</ng-template>
+
